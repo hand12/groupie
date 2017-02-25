@@ -9,10 +9,9 @@
 | product_id |  integer  |
 |    gender   |  integer  |
 |     age     |  integer  |
-|    period   |  integer  |
 |   carrier   |  string   |
 
-* gender and period use enum.  
+* gender use enum.  
 
 ### association  
 
