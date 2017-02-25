@@ -1,0 +1,22 @@
+.wrapper {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+
+  .graph {
+    background-color: blue;
+    clear: both;
+    display: inline-block;
+    margin: 20px 10px 20px 20px;
+    min-height: 750px;
+    width: 70%;
+  }
+
+  .form {
+    background-color: red;
+    float: right;
+    margin: 20px 20px 20px 10px;
+    min-height: 750px;
+    width: 25%;
+  }
+}
