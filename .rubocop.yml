@@ -1,0 +1,61 @@
+AllCops:
+  TargetRubyVersion: 2.3
+  DisplayCopNames: true
+  DisplayStyleGuide: true
+  Include:
+    - Rakefile
+    - Gemfile
+    - config.ru
+  Exclude:
+    - db/schema.rb
+    - vendor/**/*
+
+Rails:
+  Enabled: true
+
+Metrics/AbcSize:
+  Max: 25
+  Exclude:
+    - spec/**/*
+    - db/migrate/*.rb
+
+Metrics/BlockLength:
+  Exclude:
+    - spec/**/*
+    - db/migrate/*.rb
+    - config/routes.rb
+
+Metrics/LineLength:
+  AllowHeredoc: true
+  AllowURI: true
+  Max: 100
+  Exclude:
+    - spec/**/*
+    - config/routes.rb
+    - db/migrate/*.rb
+
+Metrics/MethodLength:
+  Exclude:
+    - db/migrate/*.rb
+
+AsciiComments:
+  Enabled: false
+
+ClassAndModuleChildren:
+  Enabled: false
+
+Documentation:
+  Enabled: false
+
+AndOr:
+  Enabled: false
+
+Style/BlockComments:
+  Exclude:
+    - spec/spec_helper.rb
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+TrailingBlankLines:
+  EnforcedStyle: final_newline
