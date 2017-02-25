@@ -6,7 +6,7 @@
 
 | column_name | data_type |
 |:------------|:----------|
-| consumer_id |  integer  |
+| product_id |  integer  |
 |    gender   |  integer  |
 |     age     |  integer  |
 |    period   |  integer  |
@@ -26,14 +26,13 @@
 
 | column_name | data_type |
 |:------------|:----------|
-| product_id  |  integer  |
+| consumer_id  |  integer  |
 |     cost    |  integer  |
 |  buy_count  |  integer  |
 |   quarter   |  integer  |
 |     year    |  datetime |
-|     tub     |  integer  |
 | favorite_count | integer |
-| reivew_average | float   |
+| review_average | float   |
 |     state      | integer |
 
 * quarter, tub and state use enum.  
