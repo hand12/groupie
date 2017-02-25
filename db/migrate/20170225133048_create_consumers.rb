@@ -3,7 +3,6 @@ class CreateConsumers < ActiveRecord::Migration[5.0]
     create_table :consumers do |t|
       t.integer    :gender
       t.integer    :age
-      t.integer    :period
       t.string     :carrier
       t.references :product
       t.timestamps

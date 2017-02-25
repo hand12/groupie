@@ -5,7 +5,6 @@
 #  id         :integer          not null, primary key
 #  gender     :integer
 #  age        :integer
-#  period     :integer
 #  carrier    :string(255)
 #  product_id :integer
 #  created_at :datetime         not null

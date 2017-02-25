@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(version: 20170225133753) do
   create_table "consumers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "gender"
     t.integer  "age"
-    t.integer  "period"
     t.string   "carrier"
     t.integer  "product_id"
     t.datetime "created_at", null: false
