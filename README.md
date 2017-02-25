@@ -4,13 +4,13 @@
 
 ### table  
 
-| column_name | data_type | constraint  |
-|:------------|:----------|:------------|
-| consumer_id |  integer  | primary_key |
-|    gender   |  integer  |   not_null  |
-|     age     |  integer  |   not_null  |
-|    period   |  integer  |   not_null  |
-|   carrier   |  string   |   not_null  |
+| column_name | data_type |
+|:------------|:----------|
+| consumer_id |  integer  |
+|    gender   |  integer  |
+|     age     |  integer  |
+|    period   |  integer  |
+|   carrier   |  string   |
 
 * gender and period use enum.  
 
@@ -24,19 +24,19 @@
 
 ### table  
 
-| column_name | data_type | constraint  |
-|:------------|:----------|:------------|
-| product_id  |  integer  | primary_key |
-|     cost    |  integer  ||
-|  buy_count  |  integer  ||
-|   quarter   |  integer  ||
-|     year    |  datetime ||
-|     tub     |  integer  ||
-| large_category | string  ||
-| middle_category| string  ||
-| favorite_count | integer ||
-| reivew_average | float   ||
-|     state      | integer ||
+| column_name | data_type |
+|:------------|:----------|
+| product_id  |  integer  |
+|     cost    |  integer  |
+|  buy_count  |  integer  |
+|   quarter   |  integer  |
+|     year    |  datetime |
+|     tub     |  integer  |
+| large_category | string  |
+| middle_category| string  |
+| favorite_count | integer |
+| reivew_average | float   |
+|     state      | integer |
 
 * quarter, tub and state use enum.  
 
@@ -49,11 +49,11 @@
 
 ### table  
 
-| column_name | data_type | constraint  |
-|:------------|:----------|:------------|
-|     id      |  integer  | primary_key |
-|    name     |  string   | not_null    |
-|    area     |  integer  | not_null    |
+| column_name | data_type |
+|:------------|:----------|
+|     id      |  integer  |
+|    name     |  string   |
+|    area     |  integer  |
 
 * area uses enum.  
 
@@ -65,10 +65,10 @@
 
 ### table  
 
-| column_name | data_type | constraint  |
-|:------------|:----------|:------------|
-|    id       |  integer  | primary_key |
-|   status    |  integer  ||
+| column_name | data_type |
+|:------------|:----------|
+|    id       |  integer  |
+|   status    |  integer  |
 
 *status uses enum.
 
@@ -82,10 +82,10 @@
 
 ### table  
 
-| column_name | data_type | constraint  |
-|:------------|:----------|:------------|
-|    id       |  integer  | primary_key |
-|   name      |  string   ||
+| column_name | data_type |
+|:------------|:----------|
+|    id       |  integer  |
+|   name      |  string   |
 
 
 ### association  
@@ -97,10 +97,10 @@
 
 ### tabel  
 
-| column_name | data_type | constraint  |
-|:------------|:----------|:------------|
-|    id       |  integer  | primary_key |
-|   name      |  string   ||
+| column_name | data_type |
+|:------------|:----------|
+|    id       |  integer  |
+|   name      |  string   |
 
 ### association  
 
@@ -111,11 +111,11 @@
 
 ### table  
 
-| column_name | data_type | constraint  |
-|:------------|:----------|:------------|
-|    id       |  integer  | primary_key |
-| consumer_id |  integer  | foreign_key |
-|prefecture_id|  integer  | foreign_key |
+| column_name | data_type |
+|:------------|:----------|
+|    id       |  integer  |
+| consumer_id |  integer  |
+|prefecture_id|  integer  |
 
 ### association  
 
@@ -126,11 +126,11 @@
 
 ### table  
 
-| column_name | data_type | constraint  |
-|:------------|:----------|:------------|
-|    id       |  integer  | primary_key |
-|large_category_id |integer|foreign_key|
-|middle_category_id|integer|foreign_key|
+| column_name | data_type |
+|:------------|:----------|
+|    id       |  integer  |
+|large_category_id |integer|
+|middle_category_id|integer|
 
 ### association  
 
@@ -141,11 +141,11 @@
 
 ### table  
 
-| column_name | data_type | constraint  |
-|:------------|:----------|:------------|
-|    id       |  integer  | primary_key |
-|large_category_id|  integer  |foreign_key|
-|tab_category_id  |  integer  |foreign_key|
+| column_name | data_type |
+|:------------|:----------|
+|    id       |  integer  |
+|large_category_id|  integer  |
+|tab_category_id  |  integer  |
 
 ### association  
   
