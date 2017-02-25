@@ -93,7 +93,20 @@ GEM
       railties (>= 3.2, < 5.1)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    haml (4.0.7)
+      tilt
+    haml-rails (0.9.0)
+      actionpack (>= 4.0.1)
+      activesupport (>= 4.0.1)
+      haml (>= 4.0.6, < 5.0)
+      html2haml (>= 1.0.1)
+      railties (>= 4.0.1)
     hirb (0.7.3)
+    html2haml (2.1.0)
+      erubis (~> 2.7.0)
+      haml (~> 4.0)
+      nokogiri (>= 1.6.0)
+      ruby_parser (~> 3.5)
     i18n (0.8.1)
     jbuilder (2.6.2)
       activesupport (>= 3.0.0, < 5.1)
@@ -218,6 +231,8 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
     ruby-progressbar (1.8.1)
+    ruby_parser (3.8.4)
+      sexp_processor (~> 4.1)
     sass (3.4.23)
     sass-rails (5.0.6)
       railties (>= 4.0.0, < 6)
@@ -228,13 +243,10 @@ GEM
     sdoc (0.4.2)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
+    sexp_processor (4.8.0)
     slim (3.0.7)
       temple (~> 0.7.6)
       tilt (>= 1.3.3, < 2.1)
-    slim-rails (3.1.1)
-      actionpack (>= 3.1)
-      railties (>= 3.1)
-      slim (~> 3.0)
     slim_lint (0.11.0)
       rake (>= 10, < 13)
       rubocop (>= 0.47.0)
@@ -296,6 +308,7 @@ DEPENDENCIES
   factory_girl_rails
   faker
   font-awesome-rails
+  haml-rails
   hirb
   jbuilder
   jquery-rails
@@ -316,7 +329,6 @@ DEPENDENCIES
   rubocop
   sass-rails (~> 5.0)
   sdoc
-  slim-rails
   slim_lint
   spring
   spring-watcher-listen (~> 2.0.0)
@@ -327,4 +339,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.13.7
+   1.14.5

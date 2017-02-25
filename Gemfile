@@ -4,9 +4,9 @@ source 'https://rubygems.org'
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'sdoc', group: :doc # Rubyのソースを読み取り、ブラウザで閲覧しやすいドキュメントを生成してくれる
 gem 'turbolinks' # Railsのページ遷移高速化のためのgem
-# gem 'haml-rails'
+gem 'haml-rails'
 gem 'puma', '~> 3.0'
-gem 'slim-rails'
+# gem 'slim-rails'
 gem 'therubyracer'
 
 # UI/UX
