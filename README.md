@@ -16,9 +16,9 @@
 
 ### association  
 
-  has_many   :consumers_products  
-  has_many   :products, through: :consumers_products  
-  belongs_to :prefectures  
+  has_many   :consumer_prefectures  
+  has_many   :prefectures, through: :consumer_prefectures  
+  belongs_to :product  
 
 ## Product  
 
@@ -32,8 +32,6 @@
 |   quarter   |  integer  |
 |     year    |  datetime |
 |     tub     |  integer  |
-| large_category | string  |
-| middle_category| string  |
 | favorite_count | integer |
 | reivew_average | float   |
 |     state      | integer |
@@ -42,8 +40,8 @@
 
 ### association  
 
-  has_many :consumers_products  
-  has_many :consumers, through: :consumers_products  
+  has_many :consumer_prefectures  
+  has_many :consumers, through: :consumer_prefectures  
 
 ## Prefecture  
 
