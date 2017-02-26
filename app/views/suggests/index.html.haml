@@ -5,5 +5,17 @@
     / = text_area_tag 'age', '', id: 'age_input'
     / = select_tag 'prefecture', options_from_collection_for_select(@prefectures, :id , :name)
     / = select_tag 'large_category', options_from_collection_for_select(@large_category, :id, :name)
+.contents
+  #example
+    %h1.title
+      Graph
+    %hr.title_bar
+  #form_contents
+    .form_content
+      %h1.title
+        Question
+      %hr.title_bar
+      
+
 
 
