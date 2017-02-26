@@ -8,7 +8,6 @@ class CreateProducts < ActiveRecord::Migration[5.0]
       t.integer    :favorite_count
       t.float      :review_average
       t.integer    :state, default: 0
-      t.references :consumer
       t.references :middle_category
     end
   end

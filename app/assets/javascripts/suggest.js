@@ -8,7 +8,7 @@ $(function(){
       url: '/suggests/gender',
       type: 'get',
       datatype: 'json',
-      data: { gender: input},
+      data: { gender: input },
     })
     .done(function(data){
 

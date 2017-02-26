@@ -44,10 +44,7 @@ ActiveRecord::Schema.define(version: 20170226050717) do
     t.integer  "favorite_count"
     t.float    "review_average",     limit: 24
     t.integer  "state",                         default: 0
-    t.integer  "consumer_id"
     t.integer  "middle_category_id"
-    t.integer  "item_id"
-    t.index ["consumer_id"], name: "index_products_on_consumer_id", using: :btree
     t.index ["middle_category_id"], name: "index_products_on_middle_category_id", using: :btree
   end
 

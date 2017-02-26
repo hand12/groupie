@@ -10,13 +10,10 @@
 #  favorite_count     :integer
 #  review_average     :float(24)
 #  state              :integer          default("cancelled")
-#  consumer_id        :integer
 #  middle_category_id :integer
-#  item_id            :integer
 #
 # Indexes
 #
-#  index_products_on_consumer_id         (consumer_id)
 #  index_products_on_middle_category_id  (middle_category_id)
 #
 
