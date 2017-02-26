@@ -12,7 +12,7 @@ $(function(){
     for (i = 0; i <= 10; i++){
       var rand = Math.floor( Math.random() * 361 );
       var radian = rand * Math.PI / 180;
-      var distance = 500;
+      var distance = Math.floor( Math.random() * 1000 );
       var x = Math.cos(radian) * distance;
       var y = Math.sin(radian) * distance;
       if (x < 0){
@@ -21,7 +21,7 @@ $(function(){
       if(y < 0){
         y = y * -1;
       }
-      var r = Math.floor( Math.random() * 50 );//プロダクトの公倍数
+      var r = Math.floor( Math.random() * 100 );//プロダクトの公倍数
       var newCircle = [x, y, r];
       carray.push(newCircle);
     }
@@ -56,7 +56,7 @@ $(function(){
         },
       });
 
-    var dammyProducts = ["パンツ", "ワンピース・ドレス", "トップス", "シューズ", "バッグ", "インナー", "小物", "アクセサリー", "浴衣・着物", "アウター"]
+    var dammyProducts = ["パンツ", "ワンピース・ドレス", "トップス", "シューズ", "バッグ", "インナー", "小物", "アクセサリー", "浴衣・着物", "アウター", "チノパン", "ジーンズ", "ドレス"]
     g.append('circle')
       .attr({
         'r': 0,
