@@ -1,3 +1,9 @@
 Rails.application.routes.draw do
-  resources :suggest, only: :index
+  root 'suggests#index'
+  resources :suggest, only: :index do
+    collection do
+      get 'gender'
+      get 'age'
+    end
+  end
 end
