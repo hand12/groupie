@@ -5,7 +5,7 @@ class SuggestsController < ApplicationController
 
   def gender
     consumers_from_gender = Consumer.where(gender: params[:gender])
-    @products_from_gender = consumers_from_gender.map{|c| c.products.id}
+    @products_from_gender = consumers_from_gender.map{|c| c.product_id}
     @hoge = Product.where(id: @products_from_gender)
     @popular_products = @hoge.order(buy_count: :desc).limit(10)
     @detail_products = @popular_products.map{|p| [p.middle_category.name, p.buy_count] }
