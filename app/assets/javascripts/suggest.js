@@ -1,8 +1,8 @@
 $(function(){
 
-  $('#gender_select').on('change', function(e){
+  $('#gender').on('change', function(e){
     e.preventDefault();
-    gender = $('#gender_select').value();
+    gender = $('#gender').value();
 
     $.ajax({
       url: '/suggest/gender',
