@@ -24,4 +24,5 @@ class Product < ApplicationRecord
   has_many   :consumers
   belongs_to :tab
   belongs_to :middle_category
+  enum state: { cancelled: 0, done: 1, returned: 2, now_registering: 3 }
 end

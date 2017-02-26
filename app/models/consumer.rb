@@ -17,4 +17,5 @@
 class Consumer < ApplicationRecord
   belongs_to :prefecture
   belongs_to :product
+  enum gender: { unknown: 0, man: 1, woman: 2 }
 end
