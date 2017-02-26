@@ -4,7 +4,6 @@ class SuggestsController < ApplicationController
   end
 
   def gender
-    binding.pry
     consumers_from_gender = Consumer.where(gender: params[:gender])
     @products_from_gender = consumers_from_gender.map{|c| c.products}
     @popular_products = @products_from_gender.order(buy_count: :desc).limit(10)
