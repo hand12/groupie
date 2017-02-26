@@ -7,16 +7,15 @@
 | column_name | data_type |
 |:------------|:----------|
 | product_id |  integer  |
+|prefecture_id| integer  |
 |    gender   |  integer  |
 |     age     |  integer  |
-|   carrier   |  string   |
 
 * gender use enum.  
 
 ### association  
 
-  has_many   :consumer_prefectures  
-  has_many   :prefectures, through: :consumer_prefectures  
+  belongs_to :prefecture  
   belongs_to :product  
 
 ## Product  
@@ -26,6 +25,8 @@
 | column_name | data_type |
 |:------------|:----------|
 | consumer_id  |  integer  |
+|middle_category_id|integer|
+|tab_id|integer|
 |     cost    |  integer  |
 |  buy_count  |  integer  |
 |   quarter   |  integer  |
@@ -38,8 +39,9 @@
 
 ### association  
 
-  has_many :consumer_prefectures  
-  has_many :consumers, through: :consumer_prefectures  
+  has_many  :consumers  
+  belogs_to :tab  
+  has_one   :middle_category  
 
 ## Prefecture  
 
@@ -66,12 +68,14 @@
 |    id       |  integer  |
 |   status    |  integer  |
 
-*status uses enum.
+*status uses enum.  
 
 ### association  
   
   has_many :large_tabs  
   has_many :large_categories, through: :large_tabs  
+  has_many :products  
+
 
 
 ## LargeCategory  
@@ -86,8 +90,9 @@
 
 ### association  
 
-  has_many :large_middles  
-  has_many :middle_categories, through: :large_middles  
+  has_many :large_tabs  
+  has_many :tabs, through: :large_tabs  
+  has_many :middle_categories  
 
 ## MiddleCategory  
 
@@ -97,41 +102,13 @@
 |:------------|:----------|
 |    id       |  integer  |
 |   name      |  string   |
-
-### association  
-
-  has_many :large_middles  
-  has_many :large_categories, through: :large_middles  
-
-## ConsumerPrefecture  
-
-### table  
-
-| column_name | data_type |
-|:------------|:----------|
-|    id       |  integer  |
-| consumer_id |  integer  |
-|prefecture_id|  integer  |
-
-### association  
-
-  belongs_to :consumer  
-  belongs_to :prefecture  
-
-## LargeMiddle  
-
-### table  
-
-| column_name | data_type |
-|:------------|:----------|
-|    id       |  integer  |
-|large_category_id |integer|
-|middle_category_id|integer|
+|large_category_id|integer|
 
 ### association  
 
   belongs_to :large_category  
-  belongs_to :middle_category  
+  has_many   :products  
+
 
 ## LargeTabs  
 
@@ -144,6 +121,6 @@
 |tab_category_id  |  integer  |
 
 ### association  
-  
+
   belongs_to :tab  
   belongs_to :large_category  
