@@ -25,8 +25,7 @@
 | column_name | data_type |
 |:------------|:----------|
 | consumer_id  |  integer  |
-|middle_category_id|integer|
-|tab_id|integer|
+|large_category_id|integer|
 |     cost    |  integer  |
 |  buy_count  |  integer  |
 |   quarter   |  integer  |
@@ -41,7 +40,7 @@
 
   has_many  :consumers  
   belogs_to :tab  
-  has_one   :middle_category  
+  belongs_to:large_categories  
 
 ## Prefecture  
 
@@ -93,6 +92,7 @@
   has_many :large_tabs  
   has_many :tabs, through: :large_tabs  
   has_many :middle_categories  
+  has_many :products
 
 ## MiddleCategory  
 
@@ -107,7 +107,6 @@
 ### association  
 
   belongs_to :large_category  
-  has_many   :products  
 
 
 ## LargeTabs  
