@@ -13,4 +13,5 @@
 
 class MiddleCategory < ApplicationRecord
   belongs_to :large_category
+  has_many   :products
 end
