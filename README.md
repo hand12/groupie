@@ -40,7 +40,7 @@
 
   has_many  :consumers  
   belogs_to :tab  
-  belongs_to:large_categories  
+  belongs_to:large_category  
 
 ## Prefecture  
 
