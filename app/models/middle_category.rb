@@ -12,4 +12,5 @@
 #
 
 class MiddleCategory < ApplicationRecord
+  belongs_to :large_category
 end

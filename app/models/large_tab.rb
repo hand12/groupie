@@ -13,4 +13,6 @@
 #
 
 class LargeTab < ApplicationRecord
+  belongs_to :tab
+  belongs_to :large_category
 end

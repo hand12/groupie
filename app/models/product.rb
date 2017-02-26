@@ -20,4 +20,7 @@
 #
 
 class Product < ApplicationRecord
+  has_many   :consumers
+  belongs_to :tab
+  belongs_to :large_category
 end

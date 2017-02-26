@@ -15,4 +15,6 @@
 #
 
 class Consumer < ApplicationRecord
+  belongs_to :prefecture
+  belongs_to :product
 end

@@ -8,4 +8,5 @@
 #
 
 class Prefecture < ApplicationRecord
+  has_many :consumers
 end

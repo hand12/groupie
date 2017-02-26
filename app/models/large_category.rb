@@ -7,4 +7,8 @@
 #
 
 class LargeCategory < ApplicationRecord
+  has_many :large_tabs
+  has_many :tabs, through: :large_tabs
+  has_many :middle_categories
+  has_many :products
 end
