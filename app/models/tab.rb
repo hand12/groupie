@@ -7,4 +7,7 @@
 #
 
 class Tab < ApplicationRecord
+  has_many :large_tabs
+  has_many :large_categories, through: :large_tabs
+  has_many :products
 end
