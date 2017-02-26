@@ -4,7 +4,7 @@
 #
 #  id   :integer          not null, primary key
 #  name :string(255)
-#  area :integer          default(0)
+#  area :integer          default("unknown")
 #
 
 class Prefecture < ApplicationRecord

@@ -1,7 +1,7 @@
 .wrapper
   .graph
   .form
-    = select_tag 'gender', options_for_select([['選択肢', '']['男', 1], ['女', 2]], id: 'gender_select')
+    = select_tag 'gender', options_for_select([['男', 1], ['女', 2]], id: 'gender_select')
     / = text_area_tag 'age', '', id: 'age_input'
     / = select_tag 'prefecture', options_from_collection_for_select(@prefectures, :id , :name)
     / = select_tag 'large_category', options_from_collection_for_select(@large_category, :id, :name)
@@ -15,7 +15,7 @@
       %h1.title
         Question
       %hr.title_bar
-      
+
 
 
 

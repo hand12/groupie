@@ -25,13 +25,6 @@ ActiveRecord::Schema.define(version: 20170226050717) do
     t.string "name"
   end
 
-  create_table "large_tabs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "large_category_id"
-    t.integer "tab_id"
-    t.index ["large_category_id"], name: "index_large_tabs_on_large_category_id", using: :btree
-    t.index ["tab_id"], name: "index_large_tabs_on_tab_id", using: :btree
-  end
-
   create_table "middle_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string  "name"
     t.integer "large_category_id"
@@ -49,17 +42,13 @@ ActiveRecord::Schema.define(version: 20170226050717) do
     t.integer  "year"
     t.datetime "order_time"
     t.integer  "favorite_count"
-    t.float    "review_average",    limit: 24
-    t.integer  "state",                        default: 0
+    t.float    "review_average",     limit: 24
+    t.integer  "state",                         default: 0
     t.integer  "consumer_id"
-    t.integer  "large_category_id"
+    t.integer  "middle_category_id"
     t.integer  "item_id"
     t.index ["consumer_id"], name: "index_products_on_consumer_id", using: :btree
-    t.index ["large_category_id"], name: "index_products_on_large_category_id", using: :btree
-  end
-
-  create_table "tabs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer "status", default: 0
+    t.index ["middle_category_id"], name: "index_products_on_middle_category_id", using: :btree
   end
 
 end

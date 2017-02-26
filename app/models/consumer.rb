@@ -3,7 +3,7 @@
 # Table name: consumers
 #
 #  id            :integer          not null, primary key
-#  gender        :integer          default(0)
+#  gender        :integer          default("unknown")
 #  age           :integer
 #  product_id    :integer
 #  prefecture_id :integer

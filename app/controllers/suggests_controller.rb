@@ -1,5 +1,4 @@
 class SuggestsController < ApplicationController
-  before_action :set_current_season, only: [:index]
 
   def index
   end
