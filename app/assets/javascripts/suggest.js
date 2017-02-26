@@ -2,13 +2,13 @@ $(function(){
 
   $('#gender').on('change', function(e){
     e.preventDefault();
-    gender = $('#gender').value();
+    input = $('#gender').val();
 
     $.ajax({
-      url: '/suggest/gender',
-      type: 'post',
+      url: '/suggests/gender',
+      type: 'get',
       datatype: 'json',
-      data: gender,
+      data: { gender: input},
     })
     .done(function(data){
 
