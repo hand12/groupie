@@ -3,13 +3,13 @@ class CreateProducts < ActiveRecord::Migration[5.0]
     create_table :products do |t|
       t.integer    :cost
       t.integer    :buy_count
-      t.integer    :quarter
-      t.datetime   :year
+      t.integer    :year
+      t.datetime   :order_time
       t.integer    :favorite_count
       t.float      :review_average
-      t.integer    :state
+      t.integer    :state, default: 0
       t.references :consumer
-      t.timestamps
+      t.references :large_category
     end
   end
 end

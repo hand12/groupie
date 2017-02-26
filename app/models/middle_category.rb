@@ -2,10 +2,13 @@
 #
 # Table name: middle_categories
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id                :integer          not null, primary key
+#  name              :string(255)
+#  large_category_id :integer
+#
+# Indexes
+#
+#  index_middle_categories_on_large_category_id  (large_category_id)
 #
 
 class MiddleCategory < ApplicationRecord

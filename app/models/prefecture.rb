@@ -2,11 +2,9 @@
 #
 # Table name: prefectures
 #
-#  id         :integer          not null, primary key
-#  name       :string(255)
-#  area       :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id   :integer          not null, primary key
+#  name :string(255)
+#  area :integer          default(0)
 #
 
 class Prefecture < ApplicationRecord

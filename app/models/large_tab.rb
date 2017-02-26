@@ -5,8 +5,6 @@
 #  id                :integer          not null, primary key
 #  large_category_id :integer
 #  tab_id            :integer
-#  created_at        :datetime         not null
-#  updated_at        :datetime         not null
 #
 # Indexes
 #

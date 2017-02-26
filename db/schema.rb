@@ -12,80 +12,53 @@
 
 ActiveRecord::Schema.define(version: 20170225133753) do
 
-  create_table "consumer_prefectures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "consumer_id"
-    t.integer  "prefecture_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
-    t.index ["consumer_id"], name: "index_consumer_prefectures_on_consumer_id", using: :btree
-    t.index ["prefecture_id"], name: "index_consumer_prefectures_on_prefecture_id", using: :btree
-  end
-
   create_table "consumers", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "gender"
-    t.integer  "age"
-    t.string   "carrier"
-    t.integer  "product_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "gender",        default: 0
+    t.integer "age"
+    t.integer "product_id"
+    t.integer "prefecture_id"
+    t.index ["prefecture_id"], name: "index_consumers_on_prefecture_id", using: :btree
     t.index ["product_id"], name: "index_consumers_on_product_id", using: :btree
   end
 
   create_table "large_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "large_middles", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "large_category_id"
-    t.integer  "middle_category_id"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
-    t.index ["large_category_id"], name: "index_large_middles_on_large_category_id", using: :btree
-    t.index ["middle_category_id"], name: "index_large_middles_on_middle_category_id", using: :btree
+    t.string "name"
   end
 
   create_table "large_tabs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "large_category_id"
-    t.integer  "tab_id"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.integer "large_category_id"
+    t.integer "tab_id"
     t.index ["large_category_id"], name: "index_large_tabs_on_large_category_id", using: :btree
     t.index ["tab_id"], name: "index_large_tabs_on_tab_id", using: :btree
   end
 
   create_table "middle_categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string  "name"
+    t.integer "large_category_id"
+    t.index ["large_category_id"], name: "index_middle_categories_on_large_category_id", using: :btree
   end
 
   create_table "prefectures", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "name"
-    t.integer  "area"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string  "name"
+    t.integer "area", default: 0
   end
 
   create_table "products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "cost"
     t.integer  "buy_count"
-    t.integer  "quarter"
-    t.datetime "year"
+    t.integer  "year"
+    t.datetime "order_time"
     t.integer  "favorite_count"
-    t.float    "review_average", limit: 24
-    t.integer  "state"
+    t.float    "review_average",    limit: 24
+    t.integer  "state",                        default: 0
     t.integer  "consumer_id"
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.integer  "large_category_id"
     t.index ["consumer_id"], name: "index_products_on_consumer_id", using: :btree
+    t.index ["large_category_id"], name: "index_products_on_large_category_id", using: :btree
   end
 
   create_table "tabs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.integer "status", default: 0
   end
 
 end

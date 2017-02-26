@@ -2,10 +2,8 @@
 #
 # Table name: tabs
 #
-#  id         :integer          not null, primary key
-#  status     :integer
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id     :integer          not null, primary key
+#  status :integer          default(0)
 #
 
 class Tab < ApplicationRecord
