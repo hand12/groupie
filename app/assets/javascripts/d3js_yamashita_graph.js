@@ -7,22 +7,39 @@ $(function(){
     // var r2 = 20;
     // var r3 = 40;
     var c1 = [viewWidth / 2, viewHeight / 2, r1];
-    //距離
-    var rand = Math.floor( Math.random() * 361 );
-    var radian = rand * Math.PI / 180;
-    var distance = 500;
-    var x = Math.cos(radian) * distance;
-    var y = Math.sin(radian) * distance;
-    if (x < 0){
-      x = x * -1;
-    }
-    if(y < 0){
-      y = y * -1;
-    }
-    var r = 20;//プロダクトの公倍数
-    var newCircle = [x, y, r];
     var carray = [c1];
-    carray.push(newCircle);
+    //距離
+    for (i = 0; i <= 10; i++){
+      var rand = Math.floor( Math.random() * 361 );
+      var radian = rand * Math.PI / 180;
+      var distance = 500;
+      var x = Math.cos(radian) * distance;
+      var y = Math.sin(radian) * distance;
+      if (x < 0){
+        x = x * -1;
+      }
+      if(y < 0){
+        y = y * -1;
+      }
+      var r = Math.floor( Math.random() * 50 );//プロダクトの公倍数
+      var newCircle = [x, y, r];
+      carray.push(newCircle);
+    }
+    // var rand = Math.floor( Math.random() * 361 );
+    // var radian = rand * Math.PI / 180;
+    // var distance = 500;
+    // var x = Math.cos(radian) * distance;
+    // var y = Math.sin(radian) * distance;
+    // if (x < 0){
+    //   x = x * -1;
+    // }
+    // if(y < 0){
+    //   y = y * -1;
+    // }
+    // var r = 20;//プロダクトの公倍数
+    // var newCircle = [x, y, r];
+    // var carray = [c1];
+    // carray.push(newCircle);
 
     var svg = d3.select("#example").append("svg")
       .attr({
@@ -39,6 +56,7 @@ $(function(){
         },
       });
 
+    var dammyProducts = ["パンツ", "ワンピース・ドレス", "トップス", "シューズ", "バッグ", "インナー", "小物", "アクセサリー", "浴衣・着物", "アウター"]
     g.append('circle')
       .attr({
         'r': 0,
@@ -58,7 +76,7 @@ $(function(){
         'dy': ".35em",
         'fill': 'white',
       })
-      .text(function(d) { return "ほげ"; });//中カテゴリの名前
+      .text(function(d, i) { return dammyProducts[i]; });//中カテゴリの名前
 
     var line = d3.svg.line()
         .x(function(d) {return d[0];})
@@ -79,27 +97,6 @@ $(function(){
         lineCarray.pop();
     }
   };
-
-  $('#gender').on('change', function(e){
-    e.preventDefault();
-    var gender = $(this).val();
-    console.log("ここまではokkei");
-    getGender(gender);
-  });
-  function getGender(gender){
-    $.ajax({
-      url: '/suggests/gender',
-      type: 'post',
-      datatype: 'json',
-      data: gender,
-    })
-    .done(function(data){
-      console.log();
-    })
-    .fail(function(data){
-
-    });
-  }
 
 })
 
