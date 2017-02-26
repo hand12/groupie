@@ -49,6 +49,5 @@ test:
 #
 production:
   <<: *default
-  database: rails-hinagata_production
-  username: rails-hinagata
-  password: <%= ENV['RAILS-HINAGATA_DATABASE_PASSWORD'] %>
+  database: groupie_production
+  password: <%= ENV['GROUPIE_DATABASE_PASSWORD'] %>
